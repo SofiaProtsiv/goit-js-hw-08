@@ -1,10 +1,9 @@
 "use strict";
 
 import { galleryItems } from './gallery-items.js';
-console.log(galleryItems)
-// Описан в документации
- import SimpleLightbox from "simplelightbox";
- console.log(SimpleLightbox)
+
+
+import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
