@@ -1,16 +1,15 @@
 "use strict";
 
-import { galleryItems } from './gallery-items.js';
-
+'use strict';
 
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+import { galleryItems } from './gallery-items';
 
-const imgContainer = document.querySelector('.gallery');
-let galleryMarkup = createMarkup(galleryItems);
-
-imgContainer.innerHTML = galleryMarkup;
+const galleryEl = document.querySelector('.gallery');
+let markup = createMarkup(galleryItems);
+galleryEl.innerHTML = markup;
 
 function createMarkup(galleryData) {
   return galleryData.map(({preview, original, description}) => {
@@ -21,4 +20,4 @@ function createMarkup(galleryData) {
   }).join('');  
 };
 
-const modal = new SimpleLightbox('.gallery a');
+const modal = new SimpleLightbox('.gallery a', { captions: true, captionsData: 'alt', captionDelay: 250 });
